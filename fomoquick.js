@@ -1,12 +1,11 @@
-
 const Web3 = require('web3');
+const BigNumber = require('bignumber.js')
 
 const FomoQuickABI = require('./fomoquick.sol.json') // ABI as copied from Etherscan
 const FomoQuick = '0x4e8ecF79AdE5e2C49B9e30D795517A81e0Bf00B8' // Address of FomoQuick contract
 
 // Get a nice provider. You need WebSocket for event listening, so get that with a local geth node
 // Run geth like this: './geth --light --ws --wsorigins="*" --wsport 12345
-// A free one is
 const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://127.0.0.1:12345'))
 
 // FILL INN HERE
