@@ -56,13 +56,13 @@ const buyKey = (amount, nonce) => async () => {
   // Signed TX
   const signed = await web3.eth.accounts.signTransaction(
     {
-      nonce: String(nonce),
-      chainId: '1',
-      to: FomoQuick,
-      data: data,
-      value: Math.round(keyPrice * amount),
-      gas: '500000',
-      gasPrice: toWei(0.000000005, 18)
+      nonce: String(nonce), // Nonce <3
+      chainId: '1', // Main net
+      to: FomoQuick, // FomoQuick address
+      data: data, // Data as created above
+      value: Math.round(keyPrice * amount), // How many keys to buy!
+      gas: '500000', // Gas limit
+      gasPrice: toWei(0.000000005, 18) // Set to 5 GWei
     },
     privateKey)
 
