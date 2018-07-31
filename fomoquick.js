@@ -1,3 +1,6 @@
+// MADE BY KEKAKEK
+// COMMENT AT BOTTOM TO PREVENT BUYING A KEY ON PROGRAM LAUNCH
+
 const Web3 = require('web3');
 const BigNumber = require('bignumber.js')
 
@@ -9,14 +12,14 @@ const FomoQuick = '0x4e8ecF79AdE5e2C49B9e30D795517A81e0Bf00B8' // Address of Fom
 const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://127.0.0.1:12345'))
 
 // FILL INN HERE
-const me = '' // Your address
-const privateKey = '' // Your private key
+const me = '0x'
+const privateKey = '0x' // Your private key
 
 // Add wallet to accounts
 web3.eth.accounts.wallet.add(privateKey)
 
 // Some helper functions
-const toWei = (eth, decimals) => new BigNumber(String(eth)).times(new BigNumber(10 ** decimals)).floor()
+const toWei = (eth, decimals) => Math.floor(new BigNumber(String(eth)).multipliedBy(new BigNumber(10 ** decimals)))
 
 function getNow() {
   return (new Date()).toLocaleString()
@@ -158,5 +161,5 @@ async function quickBuy() {
   console.log('Quickbuy!')
 }
 
-// Uncommen to buy key when program start
-//quickBuy()
+// COMMENT IF YOU DONT WANT TO BUY WHEN PROGRAM START
+quickBuy()
